@@ -36,7 +36,7 @@ const Banner = ({ netflixOriginals }: Props) => {
         <h1 className="font-bold text-2xl md:text-4xl lg:text-5xl">
           {movie?.title}
         </h1>
-        <p className="max-w-sm text-xs tracking-wider font-thin md:max-w-lg md:text-sm lg:max-w-2xl lg:text-xl">
+        <p className="max-w-sm text-xs pt-5 tracking-wider font-thin grayscale md:max-w-lg md:text-sm lg:max-w-2xl lg:text-xl">
           {movie?.overview.slice(0, 200).concat("...")}
         </p>
         <div className="flex space-x-3 pt-4">
