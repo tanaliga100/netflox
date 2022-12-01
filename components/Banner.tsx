@@ -3,7 +3,7 @@ import React from "react";
 import { BsFillPlayFill } from "react-icons/bs";
 import { GrCircleInformation } from "react-icons/gr";
 import { baseUrl } from "../constants/movie";
-import { IMovie } from "../interfaces/NetflixInterface";
+import { IMovie } from "../interfaces/interface";
 
 type Props = {
   netflixOriginals: IMovie[];
@@ -18,8 +18,8 @@ const Banner = ({ netflixOriginals }: Props) => {
     );
   }, []);
   return (
-    <div className="flex flex-col space-y-2 py-16 md:space-y-4 lg:justify-end lg:pb-12 w-full  duration-1000	bg-transparent bg-gradient-to-r  h-[65vh] from-black  to-transparent">
-      <section className="absolute top-0 left-0 h-[65vh] w-full z-[-50]  ">
+    <div className="flex flex-col space-y-2 py-16 justify-center md:space-y-4 lg:justify-end lg:pb-12 w-full  duration-1000 h-[80vh]	bg-gradient-to-r   from-black  to-transparent ">
+      <section className="absolute top-0 left-0 h-[80vh] w-full z-[-50]  ">
         <Image
           src={`${baseUrl}${movie?.backdrop_path || movie?.poster_path}`}
           fill

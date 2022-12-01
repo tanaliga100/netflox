@@ -5,7 +5,7 @@ export interface IGenre {
 
 export interface IMovie {
   title: string;
-  backdrop_path?: string;
+  backdrop_path: string;
   media_type?: string;
   release_date?: string;
   first_air_date: string;
@@ -17,7 +17,7 @@ export interface IMovie {
   original_name: string;
   overview: string;
   popularity: number;
-  poster_path?: string;
+  poster_path: string;
   vote_average: number;
   vote_count: number;
 }
