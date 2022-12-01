@@ -18,4 +18,7 @@
   .bannerButton {
     @apply flex  items-center gap-x-2 rounded px-3 py-1.5 text-sm font-semibold transition hover:opacity-75 md:py-2 md:text-xl;
   }
+  .input {
+    @apply font-thin tracking-wider w-full rounded-sm bg-[#333] px-5 py-3.5 placeholder-gray-600 outline-none text-white focus:bg-[#454545];
+  }
 }

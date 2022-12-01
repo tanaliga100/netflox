@@ -9,9 +9,11 @@
     "@heroicons/react": "^2.0.13",
     "axios": "^1.2.0",
     "dotenv": "^16.0.3",
+    "firebase": "^9.14.0",
     "next": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.40.0",
     "react-icons": "^4.7.1",
     "tailwind-scrollbar-hide": "^1.1.7"
   },
