@@ -5,6 +5,7 @@ import { IMovie } from "../interfaces/interface";
 
 type Props = {
   movie: IMovie;
+  // movie: IMovie | DocumentData;
 };
 
 const ThumbNail = ({ movie }: Props) => {
