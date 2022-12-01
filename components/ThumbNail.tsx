@@ -10,7 +10,7 @@ type Props = {
 
 const ThumbNail = ({ movie }: Props) => {
   return (
-    <div className="relative h-28 min-w-[180px]  transition duration-200 ease-out px-2">
+    <div className="relative h-28 min-w-[10rem]  transition duration-200 ease-out px-2">
       <Image
         src={`https://image.tmdb.org/t/p/w500${
           movie?.backdrop_path || movie?.poster_path
