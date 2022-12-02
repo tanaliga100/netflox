@@ -33,10 +33,7 @@ const Row = ({ title, movies }: Props) => {
           className="absolute top-0 bottom-0 left-2 z-40  m-auto h-9 w-9 cursor-pointer opacity-0 transition hover:scale-125 group-hover:opacity-100 "
           onClick={() => handleClick("left")}
         />
-        <div
-          className="flex items-center  scrollbar-hide overflow-x-scroll"
-          ref={rowRef}
-        >
+        <div className="flex items-center " ref={rowRef}>
           {movies.map((movie) => (
             <ThumbNail key={movie.id} movie={movie} />
           ))}

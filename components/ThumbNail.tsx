@@ -10,15 +10,15 @@ type Props = {
 
 const ThumbNail = ({ movie }: Props) => {
   return (
-    <div className="relative h-28 min-w-[10rem]  transition duration-200 ease-out px-2">
+    <div className="relative h-28 min-w-[10rem] px-2">
       <Image
         src={`https://image.tmdb.org/t/p/w500${
           movie?.backdrop_path || movie?.poster_path
-        } `}
+        }`}
         alt={movie.name}
         fill
         object-fit="cover"
-        className="px-[3px]"
+        className="px-[3px] hover:scale-125 duration-500"
       />
     </div>
   );

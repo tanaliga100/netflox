@@ -5,6 +5,7 @@ import { BiBell, BiSearchAlt2 } from "react-icons/bi";
 import { RxAvatar } from "react-icons/rx";
 
 import icon from "../assets/icon.png";
+import useAuth from "../hooks/useAuth";
 type Props = {
   icon?: StaticImageData | any;
 };
@@ -20,6 +21,7 @@ const Header = (props: Props) => {
   };
   //HOOKS
   const [isScrolled, setIsScrolled] = React.useState(false);
+  const { logOut } = useAuth();
   React.useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -49,9 +51,12 @@ const Header = (props: Props) => {
         <BiSearchAlt2 className="hidden h-6 w-6 sm:inline" />
         <p className="hidden lg:inline-block text-white items-center"> Kids</p>
         <BiBell className=" cursor-pointer" />
-        <Link href="/account">
-          <RxAvatar className=" h-6 w-6 cursor-pointer " />
-        </Link>
+        {/* <Link href="/account"> */}
+        <RxAvatar
+          className=" h-6 w-6 cursor-pointer "
+          onClick={() => logOut()}
+        />
+        {/* </Link> */}
       </section>
     </header>
   );

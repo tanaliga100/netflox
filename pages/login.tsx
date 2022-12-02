@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import icon from "../assets/icon.png";
+import useAuth from "../hooks/useAuth";
 
 type Props = {};
 
@@ -12,6 +13,7 @@ interface Inputs {
 }
 const login = (props: Props) => {
   const [login, setLogin] = React.useState(false);
+  const { signIn, signUp } = useAuth();
   React.useEffect(() => {
     setTimeout(() => {}, 1000);
   }, []);
@@ -25,9 +27,11 @@ const login = (props: Props) => {
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     if (login) {
-      // await signIn(email, password);
+      await signIn(data.email, data.password);
+      resetField("email");
+      resetField("password");
     } else {
-      // await signUp(email, password);
+      await signUp(data.email, data.password);
     }
   };
 

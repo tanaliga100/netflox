@@ -5,6 +5,7 @@ import Banner from "../components/Banner";
 import Header from "../components/Header";
 import MyList from "../components/MyList";
 import Row from "../components/Row";
+import useAuth from "../hooks/useAuth";
 import { IMovie } from "../interfaces/interface";
 import requests from "../utils/requests";
 
@@ -29,6 +30,12 @@ const Home: NextPage<Props> = ({
   topRated,
   trendingNow,
 }: Props) => {
+  const { logOut, loading } = useAuth();
+
+  if (loading) {
+    return <p>Loading...wait for a moment</p>;
+  }
+
   return (
     <div className="relative h-[100vh] bg-gradient-to-b from-gray-900/10">
       <Head>
