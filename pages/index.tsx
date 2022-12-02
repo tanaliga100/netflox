@@ -1,8 +1,11 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import { useRecoilValue } from "recoil";
+import { modalState, movieState } from "../atoms/modalAtom";
 import Banner from "../components/Banner";
 import Header from "../components/Header";
+import Modal from "../components/Modal";
 import MyList from "../components/MyList";
 import Row from "../components/Row";
 import useAuth from "../hooks/useAuth";
@@ -31,6 +34,7 @@ const Home: NextPage<Props> = ({
   trendingNow,
 }: Props) => {
   const { logOut, loading } = useAuth();
+  const showModal = useRecoilValue(modalState);
 
   if (loading) {
     return <p>Loading...wait for a moment</p>;
@@ -56,7 +60,7 @@ const Home: NextPage<Props> = ({
           <Row movies={documentaries} title="Documentaries" />
         </div>
       </main>
-      {/* Modal */}
+      {showModal && <Modal />}
     </div>
   );
 };

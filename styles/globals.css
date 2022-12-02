@@ -22,4 +22,7 @@
   .input {
     @apply font-thin tracking-wider w-full rounded-sm bg-[#333] px-5 py-3.5 placeholder-gray-600 outline-none text-white focus:bg-[#454545];
   }
+  .modalButton {
+    @apply flex items-center justify-center rounded-full border-2 transition;
+  }
 }

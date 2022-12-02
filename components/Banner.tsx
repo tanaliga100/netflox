@@ -2,6 +2,8 @@ import Image from "next/image";
 import React from "react";
 import { BsFillPlayFill } from "react-icons/bs";
 import { GrCircleInformation } from "react-icons/gr";
+import { useRecoilState, useResetRecoilState } from "recoil";
+import { modalState, movieState } from "../atoms/modalAtom";
 import { baseUrl } from "../constants/movie";
 import { IMovie } from "../interfaces/interface";
 
@@ -11,12 +13,14 @@ type Props = {
 
 const Banner = ({ netflixOriginals }: Props) => {
   const [movie, setMovie] = React.useState<IMovie | null>(null);
-
+  const [showModal, setShowModal] = useRecoilState(modalState);
+  const [currMovie, setCurrMovie] = useRecoilState(movieState);
   React.useEffect(() => {
     setMovie(
       netflixOriginals[Math.floor(Math.random() * netflixOriginals.length)]
     );
   }, []);
+
   return (
     <div className="flex flex-col space-y-2 py-16 justify-center md:space-y-4 lg:justify-end lg:pb-12 w-full  duration-1000 h-[80vh]	bg-gradient-to-r   from-black  to-transparent ">
       <section className="absolute top-0 left-0 h-[80vh] w-full z-[-50]  ">
@@ -44,7 +48,13 @@ const Banner = ({ netflixOriginals }: Props) => {
             <BsFillPlayFill className="h-5 w-6 text-black md:h-7 md:w-7" />
             Play
           </button>
-          <button className="bannerButton  bg-[gray]/80 file:">
+          <button
+            className="bannerButton  bg-[gray]/80 file:"
+            onClick={() => {
+              setCurrMovie(movie);
+              setShowModal(true);
+            }}
+          >
             <GrCircleInformation /> Overview
           </button>
         </div>
