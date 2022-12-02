@@ -46,7 +46,7 @@ const login = (props: Props) => {
         fill
         className="-z-40 !hidden  opacity-60 sm:!inline"
         object-fit="cover"
-        alt="asds"
+        alt="movie name"
       />
       <Image
         src={icon}
@@ -56,7 +56,7 @@ const login = (props: Props) => {
         className="cursor-pointer object-contain absolute top-1 left-1"
       />
       <form
-        className="relative  mt-20 space-y-8 rounded bg-black/75 py-10 px-6 md:max-w-md md:px-14 "
+        className="relative  mt-20 space-y-8 rounded bg-black/75 py-10 px-6 md:max-w-md md:px-14"
         onSubmit={handleSubmit(onSubmit)}
       >
         <h1>Sign In</h1>

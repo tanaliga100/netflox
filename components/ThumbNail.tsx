@@ -15,7 +15,7 @@ const ThumbNail = ({ movie }: Props) => {
         src={`https://image.tmdb.org/t/p/w500${
           movie?.backdrop_path || movie?.poster_path
         }`}
-        alt={movie.name}
+        alt={"movie name"}
         fill
         object-fit="cover"
         className="px-[3px] hover:scale-125 duration-500"
